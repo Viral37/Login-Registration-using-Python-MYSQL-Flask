@@ -1,0 +1,49 @@
+<html>
+	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.css')}}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/my.css')}}">	
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css')}}">
+		<title>
+			Home Page
+		</title>
+		<script type="text/javascript">
+			function myfun() {
+				alert("page is loading....")
+			}
+		</script>
+		  
+	</head>
+<header>
+	{% include('header.html')%}
+</header>
+
+<body onload="myfun()">	
+<div class="container">
+	<div class="mainpanel">
+			
+		{% if session%}
+		<marquee><h1 style="color: blue;">{{ session }}{{ dat }}</h1></marquee>
+		<div class="w3-containe">
+
+			<h1>{{dat}}</h1>
+			<h1>The User Detail</h1>  
+			  	<div class="w3-display-container w3-hover-opacity" style="width:10%">
+			    <img src="{{ url_for('static', filename='image/i_user.png')}}" alt="Avatar" style="width:100%;">
+			    <div class="w3-display-middle w3-display-hover w3-sm">
+			      <button class="w3-btn w3-animate-opacity">{{session}}</button>
+			    </div>
+		</div>
+		{% endif %}	
+
+	</div>
+
+
+</div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<html>
+	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.css')}}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+
+	<script type="text/javascript" src="{{ url_for('static', filename='js/min.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">
+			
+		</script>
+		
+		<style type="text/css">
+			body
+			{
+				background-color: brown;
+			}
+
+		</style>
+		<script type="text/javascript">
+		{% if session %}
+			function myfun() {
+
+					document.getElementById("join").style.visibility="hidden";
+					document.getElementById("btnlog").style.visibility="visible";
+		}
+		{% endif %}	
+		</script>
+		</head>
+<header>
+<body onload="myfun()">
+<!-- navbar -->
+	<nav class="navbar navbar-inverse navbar-fixed-top"  id="mynavbar">
+		<div class="container">
+			<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" 
+			data-target="#navbar-collapse">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>
+			<a href="" class="navbar-brand">Sai <sup style="color:skyblue">Solution</sup></a>
+			</div> <!-- end of navbar-header -->
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<!-- <a href="" class="btn btn-info navbar-btn navbar-right">Signup</a> -->
+				<a href="/register">
+				<button class = "btn btn-info navbar-btn navbar-right" id="join">
+					   Join Us
+					</button></a>
+					<a href="/logout">
+						<button class = "btn btn-info navbar-btn navbar-right" id="btnlog"
+						style="visibility: hidden;">{{session}}
+					</button>
+					</a>
+				<ul class="nav navbar-nav">
+					<li><a href="#aboutus">About</a>
+					<li><a href="#gallery">Gallery</a>
+					
+				</ul>
+			</div> 
+		</div> <!-- end of container -->
+		</nav> <!--end of navbar-->
+
+
+</header>
+
+</body>
+</html>
+
+
+
+

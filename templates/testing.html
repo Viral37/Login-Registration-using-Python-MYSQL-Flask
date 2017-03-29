@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Testing page</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css')}}">
+</head>
+<body>
+<div class="w3-container-sm">
+   <table class="w3-table">
+          <tr class="w3-blue">
+               <th> ID</th>
+               <th> Name </th>
+               <th> Gender </th>
+				<th> Email </th>
+				<th> Image</th>
+               
+            </tr>
+           
+         {% for each in data1%}
+         
+            	
+            <tr>
+            	 <td> {{each[0]}}   </td>
+            	<td> {{ each[1]}} </td>
+               	<td> {{ each[2]}} </td>
+               	<td> {{ each[3]}} </td>
+               	 <!-- <td> {{ each[4]}} </td> -->
+
+               	<td><img src={{each[6]}}
+               	alt="user pic" style="width:100px; height: 100px;
+"></td>
+            	<td><img src=""></td>
+            </tr>
+            
+           	
+         {% endfor %}
+
+      </table>
+
+</div>
+
+</body>
+</html>
